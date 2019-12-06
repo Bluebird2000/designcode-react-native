@@ -3,12 +3,14 @@ import { ScrollView, SafeAreaView, Platform } from "react-native";
 import styled from 'styled-components';
 import Card from "./Card";
 import Course from "./Course";
-import { NotificationIcon } from './Icons';
 import Logo from './Logo';
+import Menu from "./Menu";
+import { NotificationIcon } from './Icons';
 import { logos, cards, courses } from './Asset';
 
 const Index = props => (
       <Container>
+        <Menu />
         <SafeAreaView>
           <ScrollView>
             <TitleBar>
