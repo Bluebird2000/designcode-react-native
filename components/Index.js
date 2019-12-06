@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { ScrollView, SafeAreaView, Platform } from "react-native";
 import styled from 'styled-components';
 import Card from "./Card";
+import Course from "./Course";
 import { NotificationIcon } from './Icons';
 import Logo from './Logo';
-import { logos, cards } from './Asset';
+import { logos, cards, courses } from './Asset';
 
 const Index = props => (
       <Container>
@@ -29,7 +30,7 @@ const Index = props => (
               />
               ))}
            </ScrollView>
-            <SubTitle>Birth Of Finratus</SubTitle>
+            <SubTitle>Design + Code</SubTitle>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               {cards.map((card, index) => (
                 <Card 
@@ -42,6 +43,19 @@ const Index = props => (
                 />
               ))}
             </ScrollView>
+            <SubTitle>Popular Courses</SubTitle>
+            {courses.map((course, index) => (
+              <Course 
+                key={ index }
+                image={ course.image }
+                logo={ course.logo }
+                subtitle={ course.subtitle }
+                title={ course.title }
+                avatar={ course.avatar }
+                caption={ course.caption }
+                author={ course.author }
+              />
+            ))}
           </ScrollView>
         </SafeAreaView>
       </Container>

@@ -19,6 +19,10 @@ const Container = styled.View`
     box-shadow: 0 5px 10px rgba(0,0,0, 0.25);
     margin: 12px 5px;
     align-items: center;
+    elevation: 5;
+    shadowColor: #000000;
+    shadowOpacity: 0.15;
+    shadowRadius: 10;
 `;
 const Image = styled.Image`
     width: 36px;
