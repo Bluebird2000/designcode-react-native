@@ -28,16 +28,76 @@ export const logos = [
   export const cards = [
       {
           image: require('./../assets/background2.jpg'),
-          title: 'X3 Leasing',
+          title: 'Prototypal Inheritance',
           logo: require('./../assets/logo-react.png'),
-          caption: 'X3 Leasing',
+          caption: 'React native',
           subtitle: '5 out of 12 sections'
       },
       {
-        image: require('./../assets/background2.jpg'),
-        title: 'Finratus',
+        image: require('./../assets/background12.jpg'),
+        title: 'Object Oriented Programming',
         logo: require('./../assets/logo-react.png'),
         caption: 'FInratus',
         subtitle: '5 out of 12 sections'
-    }
+      },
+      {
+        image: require('./../assets/background13.jpg'),
+        title: 'Quabbly, Business Made Simple',
+        logo: require('./../assets/logo-react.png'),
+        caption: 'Quabbly',
+        subtitle: '5 out of 12 sections'
+      },
+      {
+        image: require('./../assets/background14.jpg'),
+        title: 'Xttreme Developers',
+        logo: require('./../assets/logo-react.png'),
+        caption: 'Xttreme',
+        subtitle: '5 out of 12 sections'
+      },
+      {
+        image: require('./../assets/background14.jpg'),
+        title: 'Photizzo',
+        logo: require('./../assets/logo-react.png'),
+        caption: 'Photizzo',
+        subtitle: '5 out of 12 sections'
+      },
   ];
+
+  export const  courses = [
+    {
+      image: require("./../assets/background16.jpg"),
+      logo: require("./../assets/logo-figma.png"),
+      subtitle: "10 sections",
+      title: "Prototype in inVision Studion",
+      avatar: require("./../assets/avatar.jpg"),
+      caption: "Design and interactive prototype",
+      author: "Bluebird"
+    },
+    {
+      image: require("./../assets/background15.jpg"),
+      logo: require("./../assets/logo-figma.png"),
+      subtitle: "10 sections",
+      title: "Prototype in inVision Studion",
+      avatar: require("./../assets/avatar.jpg"),
+      caption: "Design and interactive prototype",
+      author: "Bluebird"
+    },
+    {
+      image: require("./../assets/background12.jpg"),
+      logo: require("./../assets/logo-figma.png"),
+      subtitle: "10 sections",
+      title: "Prototype in inVision Studion",
+      avatar: require("./../assets/avatar.jpg"),
+      caption: "Design and interactive prototype",
+      author: "Bluebird"
+    },
+    {
+      image: require("./../assets/background14.jpg"),
+      logo: require("./../assets/logo-figma.png"),
+      subtitle: "10 sections",
+      title: "Prototype in inVision Studion",
+      avatar: require("./../assets/avatar.jpg"),
+      caption: "Design and interactive prototype",
+      author: "Bluebird"
+    },
+  ]
