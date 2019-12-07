@@ -63,7 +63,7 @@ export const logos = [
       },
   ];
 
-  export const  courses = [
+  export const courses = [
     {
       image: require("./../assets/background16.jpg"),
       logo: require("./../assets/logo-figma.png"),
@@ -100,4 +100,17 @@ export const logos = [
       caption: "Design and interactive prototype",
       author: "Bluebird"
     },
-  ]
+  ];
+
+export const items = [
+    {
+      icon: "",
+      title: "Prototype in inVision Studion",
+      text: "Bluebird"
+    },
+    {
+      icon: "",
+      title: "Prototype in inVision Studion",
+      text: "Bluebird"
+    },
+  ];
