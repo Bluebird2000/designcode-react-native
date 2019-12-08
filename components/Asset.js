@@ -1,3 +1,27 @@
+
+export const list = [
+  {
+    icon: "md-settings",
+    title: "Account",
+    text: "settings"
+  },
+  {
+    icon: "md-compass",
+    title: "Learn React",
+    text: "payment"
+  },
+  {
+    icon: "md-card",
+    title: "Billing",
+    text: "settings"
+  },
+  {
+    icon: "md-exit",
+    title: "Log out",
+    text: "see you soon"
+  },
+];
+
 export const logos = [
     {
       image: require("./../assets/logo-framerx.png"),
@@ -99,18 +123,5 @@ export const logos = [
       avatar: require("./../assets/avatar.jpg"),
       caption: "Design and interactive prototype",
       author: "Bluebird"
-    },
-  ];
-
-export const items = [
-    {
-      icon: "",
-      title: "Prototype in inVision Studion",
-      text: "Bluebird"
-    },
-    {
-      icon: "",
-      title: "Prototype in inVision Studion",
-      text: "Bluebird"
     },
   ];
