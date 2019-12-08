@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Ionicons } from '@expo/vector-icons';
 
-const ItemMenu = props => (
-    <Container>
+const MenuList = props => (
+   <Container>
         <IconView>
             <Ionicons name={props.icon} size={24} color="#546bfb" />
         </IconView>
@@ -14,7 +14,7 @@ const ItemMenu = props => (
     </Container>
 )
 
-export default ItemMenu;
+export default MenuList;
 
 const Container = styled.View`
     flex-direction: row;

@@ -2,10 +2,24 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 import { Animated, TouchableOpacity, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { items } from "./Asset";
-import ItemMenu from "./Item";
+import { connect } from 'react-redux';
+import { list } from "./Asset";
+import MenuList from './MenuList';
 const screenHeight = Dimensions.get("window").height;
 const screenWidth = Dimensions.get("window").width;
+
+function mapStateToProps(state) {
+    return { action: state.action };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        closeMenu: () => dispatch({
+            type: 'CLOSE_MENU'
+        })
+    }
+}
+
 
 class Menu extends Component {
     state = {
@@ -13,15 +27,26 @@ class Menu extends Component {
     }
 
     componentDidMount() {
-        Animated.spring(this.state.top, {
-            toValue: 0,
-        }).start()
+        this.toggleMenu();
+    }
+
+    componentDidUpdate() {
+        this.toggleMenu();
     }
 
     toggleMenu = () => {
-        Animated.spring(this.state.top, {
-            toValue: screenHeight
-        }).start()
+        if(this.props.action == 'openMenu') {
+            Animated.spring(this.state.top, {
+                toValue: 0,
+            }).start()
+        }
+        
+        if(this.props.action == 'closeMenu') {
+            Animated.spring(this.state.top, {
+                toValue: screenHeight
+            }).start()
+        }
+       
     }
 
     render() {
@@ -32,23 +57,27 @@ class Menu extends Component {
                     <Title>Bluebird2000</Title>
                     <Subtitle>Designer @ ATBTechsoft</Subtitle>
                 </Cover>
-                <TouchableOpacity onPress={ this.toggleMenu } style={{ position: "absolute", top: 120, left: "50%", marginLeft: -22, zIndex: 1 }}>
+                <TouchableOpacity onPress={ this.props.closeMenu } style={{ position: "absolute", top: 120, left: "50%", marginLeft: -22, zIndex: 1 }}>
                     <CloseView>
                         <Ionicons name="md-close" size={40} color="#546bfb" />
                     </CloseView>
                 </TouchableOpacity>
                 <Content>
-                        <ItemMenu />
-                        <ItemMenu />
-                        <ItemMenu />
-                        <ItemMenu />
+                    {list.map((el, index) => (
+                        <MenuList
+                            key={ index }
+                            icon={ el.icon }
+                            title={ el.title }
+                            text={ el.text }
+                        />
+                    ))}
                 </Content>
             </AnimatedContainer>
         )
     }
 }
 
-export default Menu;
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
 
 const Container = styled.View`
     position: absolute;
