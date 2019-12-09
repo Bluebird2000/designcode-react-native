@@ -64,7 +64,7 @@ class HomeScreen extends Component {
           <SubTitle>Design + Code</SubTitle>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             {cards.map((card, index) => (
-              <TouchableOpacity key={ index } onPress={ this.sectionNavigationRouteHandler } >
+              <TouchableOpacity key={ index } onPress={() => {this.props.navigation.push("Section", { section: card })}} >
                 <Card 
                   image={ card.image }
                   title={ card.title }
