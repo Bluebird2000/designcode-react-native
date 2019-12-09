@@ -10,6 +10,9 @@ const activeColor = '#4775f2';
 const inActiveColor= '#b8bece';
 const Text = styled.Text`
     text-align: center
+    margin: 5px;
+    font-size: 17px;
+    font-weight: normal;
 `;
 
 /*************************************** */
@@ -25,7 +28,7 @@ HomeStack.navigationOptions = {
         <Text>S3 Leasing</Text>
     ),
     tabBarIcon: ({ focused }) => (
-        <Ionicons name="md-home" size={24} color={ focused ? activeColor : inActiveColor } />
+        <Ionicons name="md-home" size={24} color={ focused ? activeColor : inActiveColor } style={{}}/>
     )
 }
 /**************************************** */
@@ -37,7 +40,9 @@ const SectionStack = createStackNavigator({
 });
 
 SectionStack.navigationOptions = {
-    tabBarLabel: "My Salary",
+    tabBarLabel: () => (
+        <Text>My Salary</Text>
+    ),
     tabBarIcon: ({ focused }) => (
         <Ionicons name="md-cloud-download" size={24} color={ focused ? activeColor : inActiveColor } />
     )
@@ -50,7 +55,9 @@ const CoursesStack = createStackNavigator({
 });
 
 CoursesStack.navigationOptions = {
-    tabBarLabel: "Finratus",
+    tabBarLabel: () => (
+        <Text>Finratus</Text>
+    ),
     tabBarIcon: ({ focused }) => (
         <Ionicons name="md-wallet" size={24} color={ focused ? activeColor : inActiveColor } />
     )
@@ -63,7 +70,9 @@ const ProjectStack = createStackNavigator({
 });
 
 ProjectStack.navigationOptions = {
-    tabBarLabel: "Wifi",
+    tabBarLabel: () => (
+        <Text>Wlan</Text>
+    ),
     tabBarIcon: ({ focused }) => (
         <Ionicons name="md-globe" size={24} color={ focused ? activeColor : inActiveColor } />
     )
