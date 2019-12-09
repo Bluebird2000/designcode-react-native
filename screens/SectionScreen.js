@@ -4,16 +4,18 @@ import { Button } from 'react-native';
 
 
 class SectionScreen extends Component {
-
    static navigationOptions = {
        header: null
    }
 
     render() {
+    const { navigation } = this.props;
+    const section = navigation.getParam("section");
+    console.log(section);
+
         return (
             <Container>
-                <Text>Section screen</Text>
-                <Button title="cancel" onPress={() => this.props.navigation.goBack()} />
+                <Text>{ section.title }</Text>
             </Container>
         )
     }
