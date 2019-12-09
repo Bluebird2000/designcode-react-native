@@ -3,12 +3,12 @@ import { ScrollView, SafeAreaView, Platform, TouchableOpacity, Animated, Easing 
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import Card from "./Card";
-import Course from "./Course";
-import Logo from './Logo';
-import Menu from "./Menu";
-import { NotificationIcon } from './Icons';
-import { logos, cards, courses } from './Asset';
+import Card from "./../components/Card";
+import Course from "./../components/Course";
+import Logo from './../components/Logo';
+import Menu from "./../components/Menu";
+import { NotificationIcon } from './../components/Icons';
+import { logos, cards, courses } from './../components/Asset';
 
 function mapStateToProps(state) {
   return { action: state.action };
@@ -18,11 +18,22 @@ function mapDispatchToProps(dispatch) {
   return {
       openMenu: () => dispatch({
           type: 'OPEN_MENU'
-      })
+      }),
   }
 }
 
+
 class HomeScreen extends Component {
+
+  static navigationOptions = {
+    header: null
+  }
+
+  sectionNavigationRouteHandler = () => {
+    this.props.navigation.push("Section");
+  }
+  
+
   render() {
     return (
       <Container>
@@ -30,7 +41,7 @@ class HomeScreen extends Component {
       <SafeAreaView>
         <ScrollView>
           <TitleBar>
-            <TouchableOpacity onPress={ this.props.openMenu }>
+            <TouchableOpacity onPress={ this.props.openMenu } style={{ position: 'absolute', left: 0 }}>
               <Avatar source={require('./../assets/avatar.jpg')} />
             </TouchableOpacity>
             <Title>Welcome Back,</Title>
@@ -53,14 +64,15 @@ class HomeScreen extends Component {
           <SubTitle>Design + Code</SubTitle>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             {cards.map((card, index) => (
-              <Card 
-                key={ index }
-                image={ card.image }
-                title={ card.title }
-                logo={ card.logo }
-                caption={ card.caption }
-                subtitle={ card.subtitle }
-              />
+              <TouchableOpacity key={ index } onPress={ this.sectionNavigationRouteHandler } >
+                <Card 
+                  image={ card.image }
+                  title={ card.title }
+                  logo={ card.logo }
+                  caption={ card.caption }
+                  subtitle={ card.subtitle }
+                />
+              </TouchableOpacity>
             ))}
           </ScrollView>
           <SubTitle>Popular Courses</SubTitle>
