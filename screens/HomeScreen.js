@@ -9,6 +9,7 @@ import Logo from './../components/Logo';
 import Menu from "./../components/Menu";
 import { NotificationIcon } from './../components/Icons';
 import { logos, cards, courses } from './../components/Asset';
+import ModalLogin from '../components/ModalLogin';
 
 function mapStateToProps(state) {
   return { action: state.action };
@@ -90,6 +91,7 @@ class HomeScreen extends Component {
           ))}
         </ScrollView>
       </SafeAreaView>
+      <ModalLogin />
     </Container>
     )
   }
