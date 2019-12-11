@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { TouchableOpacity, TouchableWithoutFeedback, Keyboard } from "react-native";
-import { BlurView } from "expo";
+import { BlurView } from 'expo-blur';
+import SuccessResponse from '../util/SuccessResponse';
 class ModalLogin extends Component {
     state = {
         email: "",
@@ -9,7 +10,7 @@ class ModalLogin extends Component {
         iconEmail: require('../assets/icon-email.png'),
         IconPassword: require('../assets/icon-password.png')
     }
-    
+
     handleLogin = () => {
         console.log(`Email: ${ this.state.email }, Password: ${ this.state.password }`);
     }
@@ -35,13 +36,11 @@ class ModalLogin extends Component {
         return(
             <Container>
                 <TouchableWithoutFeedback onPress={ this.keyboardDismissal }>
-                    <BlurView
-                        tint="default" intensity={100} style={{ position: "absolute", width: "100%", height: "100%" }}
-                    />
+                    <BlurView tint="default" intensity={100} style={{ position: "absolute", width: "100%", height: "100%" }} />
                 </TouchableWithoutFeedback>
                 <Modal>
                     <Logo source={require('../assets/logo-react.png')} resizeMode="contain" />
-                    <Text>Start, Learning, Access To Pro Content</Text>
+                    <Text>S3 leasing, All in one Investment Platform</Text>
                     <TextInput onChangeText={ email => this.setState({ email }) } placeholder="email" keyboadType="email-address" onFocus={ this.focusEmail } />
                     <TextInput onChangeText={ password => this.setState({ password}) } placeholder="password" secureTextEntry={true} onFocus= { this.focusPassword }  />
                     <IconEmail source={ this.state.iconEmail } />
