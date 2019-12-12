@@ -2,10 +2,19 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import LottieView from 'lottie-react-native';
 class SuccessResponse extends Component {
+    componentDidMount() {
+        this.animation.play();
+    }
     render() {
         return(
             <Container>
-                <LottieView source={require('./../assets/lottie-ae.json')} />
+                <LottieView source={require('./../assets/lottie-checked-done.json')}
+                    autoPlay={false}
+                    loop={false}
+                    ref={animation => {
+                        this.animation = animation
+                    }}
+                />
             </Container>
         )
     }
@@ -23,3 +32,5 @@ const Container = styled.View`
     top: 0;
     left: 0;
 `;
+
+const Logo = styled.Image``;
