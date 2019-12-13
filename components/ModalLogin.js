@@ -38,13 +38,13 @@ class ModalLogin extends Component {
                 <TouchableWithoutFeedback onPress={ this.keyboardDismissal }>
                     <BlurView tint="default" intensity={100} style={{ position: "absolute", width: "100%", height: "100%" }} />
                 </TouchableWithoutFeedback>
+                <KeyboardAvoidingView behavior="padding" style={{ paddingTop: 50 }}>
+
                     <Modal>
                         <Logo source={require('../assets/logo-react.png')} resizeMode="contain" />
                         <Text>S3 leasing, All in one Investment Platform</Text>
-                        <KeyboardAvoidingView>
                             <TextInput onChangeText={ email => this.setState({ email }) } placeholder="email" keyboadType="email-address" onFocus={ this.focusEmail } />
                             <TextInput onChangeText={ password => this.setState({ password}) } placeholder="password" secureTextEntry={true} onFocus= { this.focusPassword } />
-                        </KeyboardAvoidingView>
                         <IconEmail source={ this.state.iconEmail } />
                         <IconPassword source={ this.state.IconPassword } />
                         <TouchableOpacity onPress={ this.handleLogin }>
@@ -52,8 +52,10 @@ class ModalLogin extends Component {
                                 <ButtonText> Log In </ButtonText>
                             </Button>
                         </TouchableOpacity>
-                    <SuccessResponse />
+                    {/* <SuccessResponse /> */}
                     </Modal>
+                    </KeyboardAvoidingView>
+
             </Container>
         )
     }
